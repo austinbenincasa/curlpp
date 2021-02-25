@@ -34,7 +34,7 @@ if(WIN32)
         #
         # for non-windows platform we try to keep cmake 2.8 support
         # since entreprise distribution tends to have 2.8 version.
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
     else()
         # c++ 11 support from cmake 3.1 or newer
         # set(CMAKE_CXX_STANDARD 11) # C++11...
