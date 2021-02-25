@@ -18,10 +18,10 @@ endif()
 include(GNUInstallDirs)
 
 if(WIN32)
-    # cmake 3.4 is required for CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS
-    cmake_minimum_required(VERSION 3.4)
+    # cmake 3.5 is required for CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS
+    cmake_minimum_required(VERSION 3.5)
 
-    # c++ 17 support from cmake 3.4 or newer
+    # c++ 17 support from cmake 3.5 or newer
     set(CMAKE_CXX_STANDARD 17) # C++11...
     set(CMAKE_CXX_STANDARD_REQUIRED ON) #...is required...
     set(CMAKE_CXX_EXTENSIONS OFF) #...without compiler extensions like gnu++11
@@ -37,7 +37,9 @@ if(WIN32)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
     else()
         # c++ 11 support from cmake 3.1 or newer
-        set(CMAKE_CXX_STANDARD 17) # C++11...
+        # set(CMAKE_CXX_STANDARD 11) # C++11...
+	set(CMAKE_CXX_COMPILER /usr/bin/gcc-8)
+	set(CMAKE_CXX_FLAGS "-std=c++17")
         set(CMAKE_CXX_STANDARD_REQUIRED ON) #...is required...
         set(CMAKE_CXX_EXTENSIONS OFF) #...without compiler extensions like gnu++11
     endif()
